@@ -70,3 +70,11 @@ div {
 	font-family: 'Jim Nightshade';
 	font-size: 50px;
 }**/
+
+
+/**
+
+**/
+#pause, #resume {
+	top: 50px;
+}

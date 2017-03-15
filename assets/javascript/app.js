@@ -67,6 +67,7 @@ $(document).on("click", ".theme-button", function() {
             themeDiv.prepend(themePic).append(p);
             // Lastly, have that themeDiv (aside element) prepend itself to the display area (#display)
             (display).prepend(themeDiv);
+
         }
     });
 });
@@ -85,4 +86,46 @@ $(document).on("click", ".result", function() {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
     }
+});
+
+// Testing Youtube Data API
+var tag = document.createElement('script');
+tag.src = "http://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+        videoId: 'Jg49JoQWtqs',
+        //disablekb: 1,
+        //loop: 1,
+    });
+    document.getElementById('resume').onclick = function() {
+        player.playVideo();
+    };
+    document.getElementById('pause').onclick = function() {
+        player.pauseVideo();
+    };
+}
+
+
+
+//GET https://www.googleapis.com/youtube/v3/search?part=snippet
+//                   &topicId=/m/05z1_
+//                   &type=video
+//                   &key={YOUR_API_KEY}
+                     
+    $(document).on("click", ".theme-button", function() {
+    var theme = $(this).attr("data-theme");
+	var queryURL1 = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + theme + "&type=video&key=AIzaSyDXmZYwQcSCe-TpNudmsuCHFxhZ5LmLE5Q"
+    $.ajax({
+        url: queryURL1,
+        method: "GET"
+    }).done(function(response) {
+        var results = response.list;
+        console.log(results);
+        //var player = $("#player");
+        
+
+    });
 });
