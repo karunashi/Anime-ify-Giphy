@@ -90,7 +90,7 @@ $(document).on("click", ".result", function() {
 
 // Testing Youtube Data API
 var tag = document.createElement('script');
-tag.src = "http://www.youtube.com/player_api";
+tag.src = "https://www.youtube.com/player_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
