@@ -1,0 +1,72 @@
+/**
+To make sure each div created in process isn't making a long list.
+**/
+
+aside {
+    float: left;
+    margin: 10px 15px 10px 15px;
+    border-style: outset;
+}
+
+
+/**
+Spacing for buttons in the #buttons area
+**/
+
+.theme-button {
+    margin-right: 10px;
+}
+
+
+/**
+Buttons in the listing section will have a hover effect of a bouncing animation.
+**/
+
+.theme-button:hover {
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    60%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+
+/**
+Buttons section get a margin on the bottom to make space and keep it clean.
+**/
+
+#buttons {
+    margin-bottom: 20px;
+}
+
+
+/**
+Font stylization for the page.
+**/
+
+body,
+p,
+div {
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+}
+
+
+/**.theme-button {
+	font-family: 'Jim Nightshade';
+	font-size: 50px;
+}**/
