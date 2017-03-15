@@ -122,7 +122,7 @@ function onYouTubePlayerAPIReady() {
         url: queryURL1,
         method: "GET"
     }).done(function(response) {
-        var results = response.list;
+        var results = response.videoId;
         console.log(results);
         //var player = $("#player");
         
