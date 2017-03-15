@@ -6,6 +6,7 @@ aside {
     float: left;
     margin: 10px 15px 10px 15px;
     border-style: inset;
+    border-color: blue;
 }
 
 
@@ -14,7 +15,7 @@ Spacing for buttons in the #buttons area
 **/
 
 .theme-button {
-    margin-right: 10px;
+    margin: 5px 15px 15px 5px;
 }
 
 
@@ -89,3 +90,31 @@ Extra check to ensure that the player cannot be clicked/interacted with.
 .bgblock {
     pointer-events: none;
 }
+
+
+/* 
+Background Image for the entire page.
+*/
+
+body {
+    background: url("../images/background.png");
+}
+
+
+/*
+Modal text to be black since the modal is white in background.
+*/
+
+.modal-body > p {
+    color: black;
+}
+
+
+/*
+Color Text for rating to white to work with background.png.
+*/
+
+p {
+    color: white;
+}
+

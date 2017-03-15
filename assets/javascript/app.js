@@ -1,11 +1,11 @@
 // List of premade buttons based on themes. 
-var themes = ["KONOSUBA", "GUNDAM", "SWORD ART ONLINE", "BERSERK", "EVANGELION", "GURREN LAGANN", "BOKU NO HERO ACADEMIA", "RE: ZERO KARA HAJIMERU ISEKAI SEIKATSU", "BLACK LAGOON", "FATE/STAY NIGHT", "GINTAMA"];
+var themes = ["KONOSUBA", "GUNDAM", "SWORD ART ONLINE", "BERSERK", "EVANGELION", "GURREN LAGANN", "BOKU NO HERO ACADEMIA", "RE: ZERO KARA HAJIMERU ISEKAI SEIKATSU", "BLACK LAGOON", "FATE/STAY NIGHT", "GINTAMA", "DETECTIVE CONAN", "INUYASHA", "NARUTO", "BLEACH", "KATEIKYOUSHI HITMAN REBORN", "ONE PIECE"];
 
 // Using for-loop to go through the array, themes, to create a button for each item in the themes array.
 for (var i = 0; i < themes.length; i++) {
     var button = $("<button>").text(themes[i]);
     button.attr("data-theme", themes[i]);
-    button.addClass("theme-button btn");
+    button.addClass("theme-button btn btn-lg");
     $("#buttons").append(button);
 }
 
@@ -111,6 +111,12 @@ function onYouTubePlayerAPIReady() {
         player.pauseVideo();
     };
 }
+
+$(document).ready(function(){
+    $("#instructions").click(function(){
+        $("#instructions-panel").modal();
+    });
+});
 
 ///// YouTube Data App V3 Snippet I was working with, found workaround for what I wanted.
 // GET https://www.googleapis.com/youtube/v3/search?part=snippet

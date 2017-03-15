@@ -5,18 +5,19 @@
     <title>Anime Theme [GIPHY]</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Anime Theme Page</h1>
+        <h1 class = "text-center jumbotron">Anime Theme Page</h1>
         <div id="buttons"></div>
         <form>
             <input id="input-area" type="text" placeholder="Add Anime Here!">
-            <button id="submit-button" type="submit">Submit</button>
-            <button id="reset-button" type="reset">Clear</button>
+            <button id="submit-button" type="submit" class = "btn btn-success btn-lg">Submit</button>
+            <button id="reset-button" type="reset" class = "btn btn-danger btn-lg">Clear</button>
+            <button id="instructions" type="button" class = "btn btn-warning btn-lg">Instructions</button>
         </form>
         <!-- Have the player below that should provide a video that fits the theme, in this case, Anime themed. -->
         <div class = "bgblock" id="player" style="z-index: -99; width: 70%; height: 400px"></div>
@@ -25,7 +26,35 @@
         <div id="display"></div>
 
     </div>
+
+	<!-- Modal -->
+  <div class="modal fade" id="instructions-panel" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Instructions</h4>
+        </div>
+        <div class="modal-body">
+          <p> Buttons located at the very top of the page should give you the ability to populate animated images to the page. To animate them, be sure to left-click on the images!</p>
+          <p>Type into the text input area labeled "Add Anime Here!"</p>
+          <p> Press the <strong><span style="color:green;">(Green)</span></strong> Submit button to create your very own anime-themed button (or not)!</p> 
+          <p> In order to clear the page of all existing images, press the <strong><span style="color:red;">(Red)</span></strong> clear button.</p>
+
+
+          <p><strong>Also</strong> be sure to pause and resume the anime-themed video playing as you're having a blast making your mark in this anime-themed page!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- <script src="https://apis.google.com/js/client.js?onload=init"></script> -->
     <script src="assets/javascript/app.js"></script>
 </body>
