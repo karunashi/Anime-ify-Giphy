@@ -48,7 +48,7 @@ $(document).on("click", ".theme-button", function() {
         var display = $("#display")
         for (var i = 0; i < results.length; i++) {
             // Set variable to create <aside> element to act as container for floating purposes.
-            var themeDiv = $("<aside>");
+            var themeAside = $("<aside>");
             // Get rating of each image taken from Giphy in each cycle of the loop.
             var rating = results[i].rating;
             // Declare variable p to create the <p> element, and to have the element show the rating.
@@ -63,10 +63,10 @@ $(document).on("click", ".theme-button", function() {
             themePic.attr("data-still", results[i].images.fixed_height_still.url);
             // Have themePic set a new attribute, data-animate, to contain the animated url (GIPHY)
             themePic.attr("data-animate", results[i].images.fixed_height.url);
-            // Have the themeDiv prepend the themePic (img element) and append the p (p element with rating)
-            themeDiv.prepend(themePic).append(p);
-            // Lastly, have that themeDiv (aside element) prepend itself to the display area (#display)
-            (display).prepend(themeDiv);
+            // Have the themeAside prepend the themePic (img element) and append the p (p element with rating)
+            themeAside.prepend(themePic).append(p);
+            // Lastly, have that themeAside (aside element) prepend itself to the display area (#display)
+            (display).prepend(themeAside);
 
         }
     });
@@ -88,33 +88,36 @@ $(document).on("click", ".result", function() {
     }
 });
 
-// // Testing Youtube Data API
-// var tag = document.createElement('script');
-// tag.src = "https://www.youtube.com/player_api";
-// var firstScriptTag = document.getElementsByTagName('script')[0];
-// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+///// Testing Youtube Data API
+//Have the variable tag, create script., with the source as the player.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// function onYouTubePlayerAPIReady() {
-//     player = new YT.Player('player', {
-//         videoId: 'Jg49JoQWtqs',
-//         //disablekb: 1,
-//         //loop: 1,
-//     });
-//     document.getElementById('resume').onclick = function() {
-//         player.playVideo();
-//     };
-//     document.getElementById('pause').onclick = function() {
-//         player.pauseVideo();
-//     };
-// }
+// Have the function for the player as the target instead of the iframe I've worked with. Have it pull the videoId, and then ensure that it autoplays, and that all controls are disabled.
+function onYouTubePlayerAPIReady() {
+    var player;
+    player = new YT.Player('player', {
+        videoId: 'fW93NTcyIys',
+        playerVars: { 'autoplay': 1, 'controls': 0 },
+    });
 
+    // Instead of controls enabled from the player itself, have it so that the user can interact with the buttons provided below.
+    document.getElementById('resume').onclick = function() {
+        player.playVideo();
+    };
+    document.getElementById('pause').onclick = function() {
+        player.pauseVideo();
+    };
+}
 
-
-//GET https://www.googleapis.com/youtube/v3/search?part=snippet
+///// YouTube Data App V3 Snippet I was working with, found workaround for what I wanted.
+// GET https://www.googleapis.com/youtube/v3/search?part=snippet
 //                   &topicId=/m/05z1_
 //                   &type=video
 //                   &key={YOUR_API_KEY}
-                     
+
 //    $(document).on("click", ".theme-button", function() {
 //    var theme = $(this).attr("data-theme");
 // 	var queryURL1 = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + theme + "&type=video&key=AIzaSyDXmZYwQcSCe-TpNudmsuCHFxhZ5LmLE5Q&alt=json"
@@ -125,7 +128,29 @@ $(document).on("click", ".result", function() {
 //         var results = response.videoId;
 //         console.log(results);*/
 //         //var player = $("#player");
-        
+
 
 //     });
 // });*/
+
+///// YouTube API Experimental Setup [Events not working with Player for function "Player" specifically, need to use iframe for this from further research]
+// function onYouTubePlayerAPIReady() {
+//     player = new YT.Player('player', {
+//         videoId: 'fW93NTcyIys',
+//         //disablekb: 1,
+//         //loop: 1,
+//     });
+// playerVars: { 'autoplay': 1, 'controls': 0 },
+// events: {
+//   'onReady': onPlayerReady,
+//   'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
+//   'onStateChange': onPlayerStateChange,
+//   'onError': onPlayerError
+// }
+// document.getElementById('resume').onclick = function() {
+//     player.playVideo();
+// };
+// document.getElementById('pause').onclick = function() {
+//     player.pauseVideo();
+// };
+// }

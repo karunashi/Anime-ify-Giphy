@@ -5,7 +5,7 @@ To make sure each div created in process isn't making a long list.
 aside {
     float: left;
     margin: 10px 15px 10px 15px;
-    border-style: outset;
+    border-style: inset;
 }
 
 
@@ -73,8 +73,19 @@ div {
 
 
 /**
-
+Buttons that needed to be moved for functionality wise.
 **/
-#pause, #resume {
-	top: 50px;
+
+#pause,
+#resume {
+    top: 50px;
+}
+
+
+/**
+Extra check to ensure that the player cannot be clicked/interacted with.
+**/
+
+.bgblock {
+    pointer-events: none;
 }
