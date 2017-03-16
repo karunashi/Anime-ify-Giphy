@@ -38,7 +38,7 @@ $("#reset-button").on("click", function(event) {
 
 $(document).on("click", ".theme-button", function() {
     var theme = $(this).attr("data-theme");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + theme + "&api_key=dc6zaTOxFJmzC&limit=30";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + theme + "&api_key=dc6zaTOxFJmzC&limit=15";
 
     $.ajax({
         url: queryURL,
