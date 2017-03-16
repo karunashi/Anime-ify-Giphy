@@ -22,7 +22,7 @@ $("#submit-button").on("click", function(event) {
     // Set the created button's attribute, data-theme, with the user input value
     button.attr("data-theme", newTheme);
     // Add class to the button with one created class, and one bootstrap class
-    button.addClass("theme-button btn");
+    button.addClass("theme-button btn btn-lg");
     // Append new button to the #buttons section
     $("#buttons").append(button);
     // Clean the user input area for new information.
