@@ -1,6 +1,6 @@
 # Giphy_API
 
-## Live Link (If relevant)
+## Live Link
  - https://karunashi.github.io/Giphy_API/
 
 ## Description on how to use the app
