@@ -1,7 +1,7 @@
 # Giphy_API
 
 ## Live Link
- - https://karunashi.github.io/Giphy_API/
+ - https://karunashi.github.io/Anime-ify-Giphy/
 
 ## Description on how to use the app
 Click on the instructions button to learn how to use the app in detail. Briefly explained here: You press one of the buttons on the top to have images appear based on the button's theme. It will animate if you left-click on the image, and return to its still state if you click it while it's animated. Type into the text input area and click the submit button to add your own button!
